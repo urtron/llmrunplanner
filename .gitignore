@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+
+# Runner data lives in DATA_DIR, never in the repo
+*.sqlite
+*.sqlite-*
+*.db
+*.fit
+*.FIT
+*.zip
