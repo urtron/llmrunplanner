@@ -12,6 +12,7 @@ _DEFAULT_DATA_DIR = "~/dane/inzynierka"
 class Settings:
     data_dir: Path
     anthropic_api_key: str | None
+    openrouter_api_key: str | None
 
     @property
     def fit_dir(self) -> Path:
@@ -25,5 +26,8 @@ class Settings:
 def load_settings() -> Settings:
     load_dotenv(_ENV_FILE)
     data_dir = Path(os.environ.get("DATA_DIR") or _DEFAULT_DATA_DIR).expanduser()
-    api_key = os.environ.get("ANTHROPIC_API_KEY") or None
-    return Settings(data_dir=data_dir, anthropic_api_key=api_key)
+    return Settings(
+        data_dir=data_dir,
+        anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY") or None,
+        openrouter_api_key=os.environ.get("OPENROUTER_API_KEY") or None,
+    )

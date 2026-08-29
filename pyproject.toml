@@ -3,7 +3,7 @@ name = "llmrunplanner"
 version = "0.1.0"
 authors = [{ name = "Hubert Wojcik", email = "urtron2@gmail.com" }]
 requires-python = ">=3.13,<3.14"
-dependencies = ["garminconnect (>=0.3.20)", "garmin-fit-sdk (>=21.221.0,<22.0.0)", "pandas (>=3.1.1,<4.0.0)", "numpy (>=2.5.4,<3.0.0)", "scipy (>=1.18.1,<2.0.0)", "pydantic (>=2.14.2,<3.0.0)", "pyyaml (>=6.0.3,<7.0.0)", "python-dotenv (>=1.2.4,<2.0.0)", "langchain-anthropic (>=1.7.10,<2.0.0)", "langgraph (>=1.2.19,<2.0.0)", "streamlit (>=1.66.1,<2.0.0)", "plotly (>=7.1.0,<8.0.0)"]
+dependencies = ["garminconnect (>=0.3.20)", "garmin-fit-sdk (>=21.221.0,<22.0.0)", "pandas (>=3.1.1,<4.0.0)", "numpy (>=2.5.4,<3.0.0)", "scipy (>=1.18.1,<2.0.0)", "pydantic (>=2.14.2,<3.0.0)", "pyyaml (>=6.0.3,<7.0.0)", "python-dotenv (>=1.2.4,<2.0.0)", "langchain-anthropic (>=1.7.10,<2.0.0)", "langgraph (>=1.2.19,<2.0.0)", "streamlit (>=1.66.1,<2.0.0)", "plotly (>=7.1.0,<8.0.0)", "langchain-openai (>=1.7.4,<2.0.0)"]
 
 [tool.poetry]
 packages = [{ include = "llmrunplanner", from = "src" }]
