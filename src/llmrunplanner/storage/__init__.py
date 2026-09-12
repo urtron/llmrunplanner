@@ -1,0 +1,33 @@
+from .sqlite import (
+    connect,
+    find_duplicate,
+    get_athlete,
+    known_garmin_activity_ids,
+    last_garmin_metric_date,
+    last_sync_at,
+    list_athletes,
+    load_activities,
+    load_garmin_metrics,
+    load_samples,
+    record_sync,
+    save_activity,
+    save_athlete,
+    save_garmin_metrics,
+)
+
+__all__ = [
+    "connect",
+    "find_duplicate",
+    "get_athlete",
+    "known_garmin_activity_ids",
+    "last_garmin_metric_date",
+    "last_sync_at",
+    "list_athletes",
+    "load_activities",
+    "load_garmin_metrics",
+    "load_samples",
+    "record_sync",
+    "save_activity",
+    "save_athlete",
+    "save_garmin_metrics",
+]
