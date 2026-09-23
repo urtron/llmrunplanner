@@ -10,20 +10,40 @@ from .enums import (
     WorkoutType,
     Zone,
 )
+from .metrics import (
+    ActivityMetrics,
+    AthleteMetrics,
+    BestEffort,
+    CriticalSpeed,
+    GarminComparisonRow,
+    HeartRateProfile,
+    LoadPoint,
+    RacePrediction,
+    Threshold,
+    ZoneBounds,
+)
 from .plan import Block, Goal, Segment, Skeleton, SkeletonWeek, WeekDraft, Workout
 from .validation import Violation
 
 __all__ = [
     "Activity",
+    "ActivityMetrics",
     "ActivitySource",
     "Athlete",
+    "AthleteMetrics",
+    "BestEffort",
     "Block",
+    "CriticalSpeed",
     "DailyLoad",
     "Distance",
+    "GarminComparisonRow",
     "GarminMetric",
     "GarminMetricKind",
     "Goal",
+    "HeartRateProfile",
+    "LoadPoint",
     "Phase",
+    "RacePrediction",
     "RuleKind",
     "Samples",
     "Segment",
@@ -31,9 +51,11 @@ __all__ = [
     "Skeleton",
     "SkeletonWeek",
     "SubSport",
+    "Threshold",
     "Violation",
     "WeekDraft",
     "Workout",
     "WorkoutType",
     "Zone",
+    "ZoneBounds",
 ]
