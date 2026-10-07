@@ -23,6 +23,7 @@ from .metrics import (
     ZoneBounds,
 )
 from .plan import Block, Goal, Segment, Skeleton, SkeletonWeek, WeekDraft, Workout
+from .summary import BestEffortSummary, HistorySummary, LongRun, PredictionSummary, TrendPoint, WeekVolume
 from .validation import Violation
 
 __all__ = [
@@ -32,6 +33,7 @@ __all__ = [
     "Athlete",
     "AthleteMetrics",
     "BestEffort",
+    "BestEffortSummary",
     "Block",
     "CriticalSpeed",
     "DailyLoad",
@@ -41,8 +43,11 @@ __all__ = [
     "GarminMetricKind",
     "Goal",
     "HeartRateProfile",
+    "HistorySummary",
     "LoadPoint",
+    "LongRun",
     "Phase",
+    "PredictionSummary",
     "RacePrediction",
     "RuleKind",
     "Samples",
@@ -52,8 +57,10 @@ __all__ = [
     "SkeletonWeek",
     "SubSport",
     "Threshold",
+    "TrendPoint",
     "Violation",
     "WeekDraft",
+    "WeekVolume",
     "Workout",
     "WorkoutType",
     "Zone",
