@@ -3,6 +3,7 @@ from .enums import (
     ActivitySource,
     Distance,
     GarminMetricKind,
+    GateStatus,
     Phase,
     RuleKind,
     Sex,
@@ -23,6 +24,7 @@ from .metrics import (
     ZoneBounds,
 )
 from .plan import Block, Goal, Segment, Skeleton, SkeletonWeek, WeekDraft, Workout
+from .safety import GateProposal, GateResult, HealthQuestion
 from .summary import BestEffortSummary, HistorySummary, LongRun, PredictionSummary, TrendPoint, WeekVolume
 from .validation import Violation
 
@@ -41,7 +43,11 @@ __all__ = [
     "GarminComparisonRow",
     "GarminMetric",
     "GarminMetricKind",
+    "GateProposal",
+    "GateResult",
+    "GateStatus",
     "Goal",
+    "HealthQuestion",
     "HeartRateProfile",
     "HistorySummary",
     "LoadPoint",

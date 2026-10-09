@@ -91,6 +91,15 @@ class WorkoutType(StrEnum):
         return self.is_quality or self is WorkoutType.LONG
 
 
+class GateStatus(StrEnum):
+    """Wynik Bramki bezpieczeństwa: OK – można planować, WARN – można planować z ostrzeżeniem,
+    STOP – Plan nie powstaje."""
+
+    OK = "OK"
+    WARN = "WARN"
+    STOP = "STOP"
+
+
 class RuleKind(StrEnum):
     HARD = "HARD"
     SOFT = "SOFT"

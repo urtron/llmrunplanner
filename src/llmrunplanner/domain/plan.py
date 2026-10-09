@@ -17,6 +17,10 @@ class Goal(BaseModel):
         default=None, ge=1, description="Docelowy czas [s]; brak, jeśli Biegacz go nie podał."
     )
 
+    def weeks_from(self, as_of: date) -> int:
+        """Liczba pełnych 7-dniowych Tygodni między `as_of` a startem; Tygodnie liczy się wstecz od dnia startu."""
+        return ((self.race_date - as_of).days + 1) // 7
+
 
 class Segment(BaseModel):
     """Segment: odcinek biegu w jednej Strefie."""
