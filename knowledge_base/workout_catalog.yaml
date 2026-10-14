@@ -1,0 +1,70 @@
+- type: RECOVERY
+  name: Bieg regeneracyjny
+  quality: false
+  key: false
+  zones: [Z1]
+  description: >-
+    Krótki, bardzo spokojny bieg w całości w Z1, jeden Segment lub jeden Blok z repeat 1. Służy
+    przyspieszeniu regeneracji po jednostkach kluczowych, nie buduje formy.
+  use: >-
+    We wszystkich Fazach i dla wszystkich dystansów, najlepiej dzień po jednostce kluczowej;
+    w tygodniach odciążających i tuż przed startem.
+- type: EASY
+  name: Bieg spokojny
+  quality: false
+  key: false
+  zones: [Z1, Z2]
+  description: >-
+    Spokojny bieg tlenowy w Z1–Z2, zwykle jeden Segment w Z2. Opcjonalnie kończy się 4–8
+    krótkimi przebieżkami w Z5 (np. Blok 6 × 100 m Z5 + 200 m Z1), które poprawiają
+    ekonomię biegu bez dużego zmęczenia.
+  use: >-
+    Podstawa objętości w każdej Fazie i dla każdego dystansu; przebieżki najlepiej w Fazach
+    BUILD i PEAK, nie w tygodniu tuż przed startem na dłuższych dystansach.
+- type: LONG
+  name: Długie wybieganie
+  quality: false
+  key: true
+  zones: [Z1, Z2]
+  description: >-
+    Najdłuższy bieg tygodnia, głównie w Z2, ciągły (jeden Segment lub kilka Segmentów w Z1–Z2).
+    Buduje wytrzymałość tlenową i odporność mięśniowo-szkieletową. Jednostka kluczowa,
+    ale nie jakościowa.
+  use: >-
+    Jedno w tygodniu, od Fazy BASE do PEAK; im dłuższy dystans startu, tym ważniejsze
+    (półmaraton i maraton). W TAPER skracane, w tygodniu startu pomijane lub bardzo krótkie.
+- type: TEMPO
+  name: Bieg tempowy
+  quality: true
+  key: true
+  zones: [Z3, Z4]
+  description: >-
+    Ciągły odcinek w Z3–Z4 (np. 20–40 minut) po rozgrzewce w Z1–Z2 i przed schłodzeniem w Z1.
+    Zapisywany jako trzy Bloki z repeat 1: rozgrzewka, odcinek tempowy, schłodzenie.
+    Podnosi próg mleczanowy i uczy utrzymywania równego tempa.
+  use: >-
+    Od Fazy BUILD; szczególnie ważny przed półmaratonem i maratonem (Z3 jako tempo
+    zbliżone do startowego) oraz na 10 km. Nie łączyć z inną jednostką jakościową w sąsiednie dni.
+- type: THRESHOLD_INTERVALS
+  name: Interwały progowe
+  quality: true
+  key: true
+  zones: [Z4]
+  description: >-
+    Powtórzenia w Z4 (np. 4–6 × 1000–2000 m) z przerwami truchtu w Z1 między powtórzeniami,
+    zapisane jako jeden Blok z repeat, poprzedzone rozgrzewką, a zakończone schłodzeniem
+    (osobne Bloki z repeat 1, Z1–Z2). Podnoszą próg przy mniejszym zmęczeniu niż bieg ciągły.
+  use: >-
+    Fazy BUILD i PEAK, dla dystansów od 10 km do maratonu; na 5 km uzupełnienie interwałów w Z5.
+- type: VO2MAX_INTERVALS
+  name: Interwały VO2max
+  quality: true
+  key: true
+  zones: [Z5]
+  description: >-
+    Krótkie, szybkie powtórzenia w Z5 (np. 5–8 × 400–1000 m) z przerwami w truchcie w Z1
+    o czasie zbliżonym do czasu powtórzenia (np. 400 m truchtu po 800 m), zapisane jako jeden
+    Blok z repeat, z rozgrzewką i schłodzeniem w osobnych Blokach. Rozwijają pułap tlenowy i szybkość.
+  use: >-
+    Fazy BUILD i PEAK, przede wszystkim dla 5 km i 10 km; na półmaratonie i maratonie
+    rzadko i w małej objętości. Nie w tygodniu tuż przed startem.

@@ -29,7 +29,6 @@ from .questionnaire import HEALTH_QUESTIONS
 
 _HEALTH_REASON = "Odpowiedź twierdząca w Ankiecie zdrowotnej: skonsultuj się z lekarzem przed rozpoczęciem treningu."
 _PAST_DATE_REASON = "Data startu musi być późniejsza niż Dzień stanu."
-_DISTANCE_NAMES = {Distance.K5: "5 km", Distance.K10: "10 km", Distance.HM: "półmaraton", Distance.M: "maraton"}
 
 
 def _fmt_time(seconds: float) -> str:
@@ -144,7 +143,7 @@ def run_gate(
     reasons: list[str] = []
     warnings: list[str] = []
     proposals: list[GateProposal] = []
-    name = _DISTANCE_NAMES[distance]
+    name = distance.label
 
     too_long = weeks > PLAN_MAX_WEEKS
     weeks_eff = weeks

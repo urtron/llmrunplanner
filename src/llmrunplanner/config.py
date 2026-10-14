@@ -5,6 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 _ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
+KNOWLEDGE_BASE_DIR = Path(__file__).resolve().parents[2] / "knowledge_base"
 _DEFAULT_DATA_DIR = "~/dane/inzynierka"
 
 

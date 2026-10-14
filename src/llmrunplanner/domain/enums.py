@@ -54,6 +54,11 @@ class Distance(StrEnum):
     def km(self) -> float:
         return _DISTANCE_KM[self]
 
+    @property
+    def label(self) -> str:
+        """Polska nazwa dystansu do komunikatów, np. „10 km”, „półmaraton”."""
+        return _DISTANCE_LABEL[self]
+
 
 _DISTANCE_KM = {
     Distance.K5: 5.0,
@@ -62,13 +67,20 @@ _DISTANCE_KM = {
     Distance.M: 42.195,
 }
 
+_DISTANCE_LABEL = {
+    Distance.K5: "5 km",
+    Distance.K10: "10 km",
+    Distance.HM: "półmaraton",
+    Distance.M: "maraton",
+}
+
 
 class WorkoutType(StrEnum):
     """Typ jednostki z Katalogu jednostek. RECOVERY – bieg regeneracyjny w Z1; EASY – spokojny
     bieg w Z1–Z2, opcjonalnie z krótkimi przebieżkami; LONG – długie wybieganie, głównie w Z2;
     TEMPO – ciągły bieg w Z3–Z4 po rozgrzewce; THRESHOLD_INTERVALS – powtórzenia w Z4 z przerwami w Z1;
-    VO2MAX_INTERVALS – powtórzenia w Z5 z przerwami w Z1; RACE – start, czyli Cel. Jednostki jakościowe:
-    TEMPO, THRESHOLD_INTERVALS, VO2MAX_INTERVALS; Jednostki kluczowe: jakościowe i LONG."""
+    VO2MAX_INTERVALS – powtórzenia w Z5 z przerwami w Z1. Jednostki jakościowe: TEMPO, THRESHOLD_INTERVALS,
+    VO2MAX_INTERVALS; Jednostki kluczowe: jakościowe i LONG. Start nie jest Jednostką: dopisuje go kod."""
 
     RECOVERY = "RECOVERY"
     EASY = "EASY"
@@ -76,7 +88,6 @@ class WorkoutType(StrEnum):
     TEMPO = "TEMPO"
     THRESHOLD_INTERVALS = "THRESHOLD_INTERVALS"
     VO2MAX_INTERVALS = "VO2MAX_INTERVALS"
-    RACE = "RACE"
 
     @property
     def is_quality(self) -> bool:

@@ -23,7 +23,22 @@ from .metrics import (
     Threshold,
     ZoneBounds,
 )
-from .plan import Block, Goal, Segment, Skeleton, SkeletonWeek, WeekDraft, Workout
+from .plan import (
+    Block,
+    CalendarWeek,
+    Goal,
+    PacedBlock,
+    PacedSegment,
+    PacedWorkout,
+    RaceDay,
+    Segment,
+    Skeleton,
+    SkeletonWeek,
+    Week,
+    WeekDraft,
+    Workout,
+    weeks_until_race,
+)
 from .safety import GateProposal, GateResult, HealthQuestion
 from .summary import BestEffortSummary, HistorySummary, LongRun, PredictionSummary, TrendPoint, WeekVolume
 from .validation import Violation
@@ -37,6 +52,7 @@ __all__ = [
     "BestEffort",
     "BestEffortSummary",
     "Block",
+    "CalendarWeek",
     "CriticalSpeed",
     "DailyLoad",
     "Distance",
@@ -52,8 +68,12 @@ __all__ = [
     "HistorySummary",
     "LoadPoint",
     "LongRun",
+    "PacedBlock",
+    "PacedSegment",
+    "PacedWorkout",
     "Phase",
     "PredictionSummary",
+    "RaceDay",
     "RacePrediction",
     "RuleKind",
     "Samples",
@@ -65,10 +85,12 @@ __all__ = [
     "Threshold",
     "TrendPoint",
     "Violation",
+    "Week",
     "WeekDraft",
     "WeekVolume",
     "Workout",
     "WorkoutType",
     "Zone",
     "ZoneBounds",
+    "weeks_until_race",
 ]
