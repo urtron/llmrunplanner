@@ -1,0 +1,229 @@
+- id: S1
+  level: skeleton
+  kind: hard
+  thresholds: {}
+  title: Kolejność Faz Szkieletu
+  description: >-
+    Ułóż Fazy w kolejności niemalejącej: BASE, BUILD, PEAK, TAPER. Ostatni Tydzień Szkieletu musi należeć
+    do Fazy TAPER. Fazy inne niż TAPER są opcjonalne, więc doświadczony Biegacz z dużą objętością może
+    zacząć np. od BUILD, ale po Fazie późniejszej nie wolno wrócić do wcześniejszej.
+  rationale: >-
+    Plan buduje formę stopniowo: najpierw baza tlenowa, potem intensywność specyficzna dla dystansu,
+    na końcu redukcja obciążenia, która pozwala zgromadzić formę na start. Odwrócenie kolejności
+    lub brak tapera przed startem odbiera Planowi sens.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3 (rozdz. o fazach planu); Bosquet i in. (2007)."
+- id: S1b
+  level: skeleton
+  kind: soft
+  thresholds:
+    min_phase_weeks: 2
+  title: Minimalny czas trwania Fazy
+  description: >-
+    Każda Faza inna niż TAPER powinna trwać co najmniej 2 Tygodnie. Jednotygodniowa Faza BASE, BUILD lub
+    PEAK jest zbyt krótka, aby wywołać adaptację; połącz ją z sąsiednią Fazą albo ją wydłuż.
+  rationale: >-
+    Adaptacje do bodźca treningowego wymagają powtarzania go przez kilka dni i co najmniej dwa Tygodnie;
+    pojedynczy Tydzień w Fazie jest tylko zmianą etykiety.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3."
+- id: S2
+  level: skeleton
+  kind: hard
+  thresholds:
+    taper_weeks:
+      5K: [1, 1]
+      10K: [1, 1]
+      HM: [1, 2]
+      M: [2, 3]
+    min_reduction_pct: 40
+    max_reduction_pct: 60
+  title: Taper przed startem
+  description: >-
+    Zakończ Szkielet taperem o długości zależnej od dystansu: 1 Tydzień dla 5 i 10 km, 1–2 Tygodnie dla
+    półmaratonu, 2–3 Tygodnie dla maratonu. Średnia objętość treningowa Tygodni tapera ma wynosić 40–60%
+    objętości szczytowej, czyli najwyższej objętości Tygodnia spośród Faz innych niż TAPER (redukcja
+    o 40–60%). Objętość to sam trening, bez startu, także w Tygodniu startu. Taper skraca objętość,
+    ale nie intensywność.
+  rationale: >-
+    Redukcja objętości o 40–60% przez 1–3 Tygodnie, przy utrzymaniu intensywności, poprawia wynik
+    na starcie; krótszy lub słabszy taper nie usuwa zmęczenia, a dłuższy lub głębszy zaczyna obniżać formę.
+  source: "Bosquet L. i in. (2007). Effects of tapering on performance: a meta-analysis. Med. Sci. Sports Exerc."
+- id: S3
+  level: skeleton
+  kind: soft_then_hard
+  thresholds:
+    warn_above_pct: 110
+    error_above_pct: 120
+  title: Pierwszy Tydzień a obecna objętość
+  description: >-
+    Objętość Tygodnia 1 nie może znacząco przekraczać średniej tygodniowej objętości Biegacza z ostatnich
+    4 Tygodni. Powyżej 110% tej średniej jest ostrzeżenie, powyżej 120% błąd; zacznij Plan od objętości
+    zbliżonej do dotychczasowej.
+  rationale: >-
+    Gwałtowny wzrost obciążenia względem tego, do czego organizm jest przyzwyczajony, to typowa droga
+    do przeciążenia; punktem wyjścia ma być obciążenie przewlekłe Biegacza, a nie wartość z szablonu.
+  source: "Gabbett T. J. (2016). The training-injury prevention paradox. Br. J. Sports Med.; reguła 10%."
+- id: S4
+  level: skeleton
+  kind: soft_then_hard
+  thresholds:
+    warn_above_pct: 10
+    error_above_pct: 20
+    deload_min_drop_pct: 20
+  title: Przyrost objętości z Tygodnia na Tydzień
+  description: >-
+    Objętość treningowa (bez startu) żadnego Tygodnia nie może przekraczać objętości poprzedniego
+    Tygodnia o więcej niż 10% (powyżej 10% jest ostrzeżenie, powyżej 20% błąd). Większy przyrost rozłóż
+    na kilka Tygodni, a po obniżeniu jednego Tygodnia sprawdź przyrost do następnego. Jeśli
+    poprzedni Tydzień był odciążający (objętość niższa o co najmniej 20% od Tygodnia go poprzedzającego),
+    porównuj z ostatnim Tygodniem sprzed odciążenia (także po kilku odciążeniach z rzędu), więc powrót do poprzedniej objętości po odciążeniu jest dozwolony.
+  rationale: >-
+    Stopniowy przyrost, zwykle do 10% na Tydzień, daje czas na adaptację mięśni, ścięgien i kości;
+    reguła ogranicza skoki obciążenia, nie przewiduje jednak kontuzji. Po Tygodniu odciążającym
+    organizm jest już przyzwyczajony do wyższej objętości, więc punktem odniesienia jest ostatni Tydzień
+    sprzed odciążenia.
+  source: "Gabbett T. J. (2016). The training-injury prevention paradox. Br. J. Sports Med.; reguła 10%; Impellizzeri i in. (2021)."
+- id: S6
+  level: skeleton
+  kind: soft
+  thresholds:
+    build_weeks_max: 4
+    deload_min_drop_pct: 20
+  title: Tygodnie odciążające
+  description: >-
+    Wśród Tygodni innych niż TAPER wstaw Tydzień odciążający co najwyżej po 4 Tygodniach budowania
+    z rzędu. Tydzień odciążający ma objętość niższą o co najmniej 20% (zwykle 20–30%) od poprzedniego
+    Tygodnia.
+  rationale: >-
+    Okresowe obniżenie objętości pozwala zregenerować się i utrwalić adaptacje; ciągłe budowanie
+    przez wiele Tygodni zwiększa ryzyko zmęczenia i przeciążenia.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3; Friel J. The Triathlete's Training Bible."
+- id: S7
+  level: week
+  kind: hard
+  thresholds:
+    max_km:
+      5K: 16
+      10K: 20
+      HM: 24
+      M: 35
+    max_min:
+      5K: 105
+      10K: 120
+      HM: 150
+      M: 180
+  title: Granice długiego wybiegania
+  description: >-
+    Każde długie wybieganie (LONG) ma mieścić się w limicie dystansu i czasu dla celu: 16 km i 105 min
+    dla 5 km, 20 km i 120 min dla 10 km, 24 km i 150 min dla półmaratonu, 35 km i 180 min dla maratonu.
+    Obowiązuje ten limit, który wypada niżej przy tempie Segmentów, więc limit czasu przelicz na kilometry.
+  rationale: >-
+    Korzyść z długiego wybiegania rośnie wolniej niż koszt zmęczenia; powyżej ok. 2,5–3 godzin
+    lub 32–35 km ryzyko przeciążenia przewyższa zysk, a dla krótkich dystansów wystarcza znacznie mniej.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3."
+- id: T1
+  level: week
+  kind: hard
+  thresholds:
+    min_rest_days: 1
+  title: Dzień wolny
+  description: >-
+    Zaplanuj w Tygodniu co najmniej 1 dzień wolny, czyli dzień bez żadnej Jednostki. W Tygodniu startu
+    dzień 7 zajmuje start, który nie jest dniem wolnym, więc dzień wolny musi przypadać w dniach 1–6.
+    Aby zwolnić dzień, przenieś dystans jego Jednostki na inne dni ze spokojnym biegiem.
+  rationale: >-
+    Organizm adaptuje się do treningu w czasie odpoczynku; Tydzień bez dnia wolnego odbiera regenerację
+    całkowicie.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3."
+- id: T2
+  level: week
+  kind: hard
+  thresholds: {}
+  title: Jednostki kluczowe nie dzień po dniu
+  description: >-
+    Nie planuj dwóch Jednostek kluczowych (jakościowych lub długiego wybiegania) w kolejnych dniach.
+    Między nimi zostaw co najmniej jeden dzień z biegiem spokojnym, regeneracyjnym lub wolny.
+  rationale: >-
+    Zasada „trudny dzień, łatwy dzień”: po wysiłku o wysokiej intensywności lub dużej objętości
+    organizm potrzebuje doby, by kolejna Jednostka kluczowa była jakościowa i bezpieczna.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3."
+- id: T3
+  level: week
+  kind: hard
+  thresholds:
+    max_quality: 2
+    max_long: 1
+  title: Liczba Jednostek kluczowych
+  description: >-
+    Zaplanuj w Tygodniu najwyżej 2 Jednostki jakościowe (TEMPO, THRESHOLD_INTERVALS, VO2MAX_INTERVALS)
+    i najwyżej 1 długie wybieganie (LONG). Pozostałe Jednostki mają być spokojne.
+  rationale: >-
+    Amator jest w stanie przyswoić dwa mocne bodźce jakościowe i jedno długie wybieganie w Tygodniu;
+    więcej kumuluje zmęczenie szybciej, niż organizm adaptuje się do treningu.
+  source: "Seiler S. (2010). What is best practice for training intensity and duration distribution in endurance athletes? Int. J. Sports Physiol. Perform."
+- id: T4
+  level: week
+  kind: soft_then_hard
+  thresholds:
+    warn_below_pct: 80
+    error_below_pct: 70
+  title: Udział niskiej intensywności
+  description: >-
+    Co najmniej 80% planowanego czasu biegania w Tygodniu powinno przypadać na Strefy Z1–Z2 (poniżej 80%
+    jest ostrzeżenie, poniżej 70% błąd). Czas liczy się z dystansu Segmentów i tempa Strefy, bez startu.
+    Aby podnieść ten udział, zamień część dystansu w Z3–Z5 na Z1–Z2, nie zmieniając sumy dystansów
+    Tygodnia.
+  rationale: >-
+    Rozkład intensywności z przewagą pracy w niskich Strefach (ok. 80/20) jest typowy dla biegaczy
+    długodystansowych i sprzyja adaptacji bez nadmiernego zmęczenia; zbyt dużo średnich i wysokich Stref
+    zwiększa obciążenie bez proporcjonalnej korzyści.
+  source: "Seiler S. (2010); Campos i in. (2022), przegląd rozkładu intensywności u biegaczy."
+- id: T5
+  level: week
+  kind: soft
+  thresholds:
+    max_long_share_pct:
+      5K: 30
+      10K: 30
+      HM: 35
+      M: 40
+  title: Udział długiego wybiegania w objętości
+  description: >-
+    Długie wybieganie nie powinno przekraczać części objętości treningowej Tygodnia (bez startu)
+    zależnej od celu: 30% dla 5 i 10 km, 35% dla półmaratonu, 40% dla maratonu. Przy niskiej objętości
+    Tygodnia skróć długie wybieganie, a nadwyżkę dystansu rozłóż na pozostałe dni.
+  rationale: >-
+    Zbyt duży udział jednej Jednostki w objętości Tygodnia oznacza, że pojedynczy bieg wnosi większość
+    obciążenia i ryzyka kontuzji, zamiast rozkładać pracę na kilka dni. Im dłuższy dystans startu,
+    tym ważniejsze jest długie wybieganie, więc dopuszczalny udział rośnie z dystansem.
+  source: "Daniels J. (2014). Daniels' Running Formula, wyd. 3."
+- id: T6
+  level: week
+  kind: hard
+  thresholds:
+    min_pct: -10
+    max_pct: 5
+  title: Objętość Tygodnia a cel objętości
+  description: >-
+    Objętość Tygodnia, czyli suma dystansów wszystkich Segmentów, ma mieścić się od 10% poniżej do 5%
+    powyżej docelowej objętości Tygodnia podanej w poleceniu. To objętość treningowa: start nie jest
+    Jednostką i nie wlicza się do niej, także w Tygodniu startu. Wylicz dystanse tak, aby suma trafiła
+    w ten przedział.
+  rationale: >-
+    Docelową objętość wylicza kod ze Szkieletu i wykonania poprzednich Tygodni (efektywny cel objętości),
+    a nie model; przekroczenie celu po odchyleniu od Planu groziłoby nadrabianiem zaległości.
+  source: "ADR 0007 (efektywny cel objętości); reguła 10%."
+- id: T7
+  level: week
+  kind: hard
+  thresholds:
+    min_days_before_race: 3
+  title: Ostatnia Jednostka kluczowa przed startem
+  description: >-
+    W Tygodniu startu dzień 7 to dzień startu: start dopisuje kod, więc nie planuj w nim żadnej
+    Jednostki. Ostatnia Jednostka kluczowa (jakościowa lub długie wybieganie) musi przypadać co najmniej
+    3 dni przed dniem startu, czyli najpóźniej w dniu 4. W ostatnich dniach przed startem zaplanuj tylko
+    spokojne biegi lub odpoczynek.
+  rationale: >-
+    Intensywna Jednostka tuż przed startem męczy bardziej, niż poprawia formę; kilka dni lekkiego
+    treningu pozwala nogom się odświeżyć.
+  source: "Bosquet L. i in. (2007); Daniels J. (2014). Daniels' Running Formula, wyd. 3."
