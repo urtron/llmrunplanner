@@ -12,11 +12,11 @@ _CONFIG = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
 class WeekVolume(BaseModel):
     model_config = _CONFIG
 
-    week_start: _Date = Field(description="Pierwszy dzień 7-dniowego bloku.")
-    distance_km: float = Field(description="Dystans bloku [km].")
-    duration_min: int = Field(description="Czas treningu w bloku [min].")
-    trimp: int = Field(description="Suma TRIMP bloku.")
-    runs: int = Field(description="Liczba biegów w bloku.")
+    week_start: _Date = Field(description="Pierwszy dzień okna 7-dniowego.")
+    distance_km: float = Field(description="Dystans w oknie [km].")
+    duration_min: int = Field(description="Czas treningu w oknie [min].")
+    trimp: int = Field(description="Suma TRIMP w oknie.")
+    runs: int = Field(description="Liczba biegów w oknie.")
 
 
 class LongRun(BaseModel):
@@ -63,9 +63,9 @@ class HistorySummary(BaseModel):
     as_of: _Date = Field(description="Dzień stanu: początek planowanego Tygodnia.")
     age_range: str = Field(description="Przedział wieku Biegacza, np. 20–29.")
     history_start: _Date = Field(description="Dzień pierwszego biegu w danych.")
-    weekly_volumes: list[WeekVolume] = Field(description="Objętości 7-dniowych bloków, od najstarszego.")
-    long_runs: list[LongRun] = Field(description="Najdłuższy bieg każdego bloku, od najstarszego.")
-    avg_weekly_km_last_4w: float = Field(description="Średnia tygodniowa objętość z ostatnich 4 bloków [km].")
+    weekly_volumes: list[WeekVolume] = Field(description="Objętości w oknach 7-dniowych, od najstarszego.")
+    long_runs: list[LongRun] = Field(description="Najdłuższy bieg każdego okna 7-dniowego, od najstarszego.")
+    avg_weekly_km_last_4w: float = Field(description="Średnia tygodniowa objętość z ostatnich 4 okien 7-dniowych [km].")
     zone_distribution_hr_pct: dict[Zone, int] = Field(
         description="Udział czasu w Strefach tętna w oknie podsumowania [%, liczby całkowite]. Udziały z tętna zaniżają "
         "intensywność interwałów, bo tętno nie nadąża za krótkimi powtórzeniami."
@@ -93,9 +93,9 @@ class HistorySummary(BaseModel):
     threshold_warnings: list[str] = Field(description="Ostrzeżenia dotyczące wiarygodności Progu.")
     hr_max_bpm: int = Field(description="Tętno maksymalne [uderzenia/min].")
     hr_rest_bpm: int = Field(description="Tętno spoczynkowe [uderzenia/min].")
-    ef_trend: list[TrendPoint] = Field(description="Trend wskaźnika EF w blokach 4-tygodniowych, od najstarszego.")
+    ef_trend: list[TrendPoint] = Field(description="Trend wskaźnika EF w okresach 4-tygodniowych, od najstarszego.")
     decoupling_trend_pct: list[TrendPoint] = Field(
-        description="Trend decouplingu [%] w blokach 4-tygodniowych, od najstarszego."
+        description="Trend decouplingu [%] w okresach 4-tygodniowych, od najstarszego."
     )
     best_efforts: list[BestEffortSummary] = Field(description="Najlepsze odcinki z treningów użyte do wyznaczenia Progu; to prawdopodobnie wysiłki submaksymalne, "
         "a nie wyniki zawodów.")

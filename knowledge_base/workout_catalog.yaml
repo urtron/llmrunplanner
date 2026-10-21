@@ -39,7 +39,7 @@
   key: true
   zones: [Z3, Z4]
   description: >-
-    Ciągły odcinek w Z3–Z4 (np. 20–40 minut) po rozgrzewce w Z1–Z2 i przed schłodzeniem w Z1.
+    Ciągły odcinek ok. 4–8 km w Z3–Z4 po rozgrzewce w Z1–Z2 i przed schłodzeniem w Z1.
     Zapisywany jako trzy Bloki z repeat 1: rozgrzewka, odcinek tempowy, schłodzenie.
     Podnosi próg mleczanowy i uczy utrzymywania równego tempa.
   use: >-
@@ -51,7 +51,7 @@
   key: true
   zones: [Z4]
   description: >-
-    Powtórzenia w Z4 (np. 4–6 × 1000–2000 m) z przerwami truchtu w Z1 między powtórzeniami,
+    Powtórzenia w Z4 (np. 4–6 × 1000–2000 m) z przerwami truchtu w Z1 (np. 400 m) między powtórzeniami,
     zapisane jako jeden Blok z repeat, poprzedzone rozgrzewką, a zakończone schłodzeniem
     (osobne Bloki z repeat 1, Z1–Z2). Podnoszą próg przy mniejszym zmęczeniu niż bieg ciągły.
   use: >-
@@ -62,9 +62,9 @@
   key: true
   zones: [Z5]
   description: >-
-    Krótkie, szybkie powtórzenia w Z5 (np. 5–8 × 400–1000 m) z przerwami w truchcie w Z1
-    o czasie zbliżonym do czasu powtórzenia (np. 400 m truchtu po 800 m), zapisane jako jeden
-    Blok z repeat, z rozgrzewką i schłodzeniem w osobnych Blokach. Rozwijają pułap tlenowy i szybkość.
+    Krótkie, szybkie powtórzenia w Z5 (np. 5–8 × 400–1000 m) z przerwą w truchcie Z1 o długości
+    od połowy do całego dystansu powtórzenia (np. 400 m po 800 m), zapisane jako jeden Blok z repeat,
+    z rozgrzewką i schłodzeniem w osobnych Blokach. Rozwijają pułap tlenowy i szybkość.
   use: >-
     Fazy BUILD i PEAK, przede wszystkim dla 5 km i 10 km; na półmaratonie i maratonie
     rzadko i w małej objętości. Nie w tygodniu tuż przed startem.

@@ -68,13 +68,13 @@
   thresholds:
     warn_above_pct: 10
     error_above_pct: 20
-    deload_min_drop_pct: 20
+    deload_min_drop_pct: 15
   title: Przyrost objętości z Tygodnia na Tydzień
   description: >-
     Objętość treningowa (bez startu) żadnego Tygodnia nie może przekraczać objętości poprzedniego
     Tygodnia o więcej niż 10% (powyżej 10% jest ostrzeżenie, powyżej 20% błąd). Większy przyrost rozłóż
     na kilka Tygodni, a po obniżeniu jednego Tygodnia sprawdź przyrost do następnego. Jeśli
-    poprzedni Tydzień był odciążający (objętość niższa o co najmniej 20% od Tygodnia go poprzedzającego),
+    poprzedni Tydzień był odciążający (objętość niższa o co najmniej 15% od Tygodnia go poprzedzającego),
     porównuj z ostatnim Tygodniem sprzed odciążenia (także po kilku odciążeniach z rzędu), więc powrót do poprzedniej objętości po odciążeniu jest dozwolony.
   rationale: >-
     Stopniowy przyrost, zwykle do 10% na Tydzień, daje czas na adaptację mięśni, ścięgien i kości;
@@ -87,11 +87,11 @@
   kind: soft
   thresholds:
     build_weeks_max: 4
-    deload_min_drop_pct: 20
+    deload_min_drop_pct: 15
   title: Tygodnie odciążające
   description: >-
     Wśród Tygodni innych niż TAPER wstaw Tydzień odciążający co najwyżej po 4 Tygodniach budowania
-    z rzędu. Tydzień odciążający ma objętość niższą o co najmniej 20% (zwykle 20–30%) od poprzedniego
+    z rzędu. Tydzień odciążający ma objętość niższą o co najmniej 15% (zwykle 20–30%) od poprzedniego
     Tygodnia.
   rationale: >-
     Okresowe obniżenie objętości pozwala zregenerować się i utrwalić adaptacje; ciągłe budowanie
@@ -115,7 +115,7 @@
   description: >-
     Każde długie wybieganie (LONG) ma mieścić się w limicie dystansu i czasu dla celu: 16 km i 105 min
     dla 5 km, 20 km i 120 min dla 10 km, 24 km i 150 min dla półmaratonu, 35 km i 180 min dla maratonu.
-    Obowiązuje ten limit, który wypada niżej przy tempie Segmentów, więc limit czasu przelicz na kilometry.
+    Obowiązuje ten limit, który wypada niżej przy tempie Segmentów.
   rationale: >-
     Korzyść z długiego wybiegania rośnie wolniej niż koszt zmęczenia; powyżej ok. 2,5–3 godzin
     lub 32–35 km ryzyko przeciążenia przewyższa zysk, a dla krótkich dystansów wystarcza znacznie mniej.
@@ -183,13 +183,13 @@
   thresholds:
     max_long_share_pct:
       5K: 30
-      10K: 30
+      10K: 35
       HM: 35
       M: 40
   title: Udział długiego wybiegania w objętości
   description: >-
     Długie wybieganie nie powinno przekraczać części objętości treningowej Tygodnia (bez startu)
-    zależnej od celu: 30% dla 5 i 10 km, 35% dla półmaratonu, 40% dla maratonu. Przy niskiej objętości
+    zależnej od celu: 30% dla 5 km, 35% dla 10 km i półmaratonu, 40% dla maratonu. Przy niskiej objętości
     Tygodnia skróć długie wybieganie, a nadwyżkę dystansu rozłóż na pozostałe dni.
   rationale: >-
     Zbyt duży udział jednej Jednostki w objętości Tygodnia oznacza, że pojedynczy bieg wnosi większość

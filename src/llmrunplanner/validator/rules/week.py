@@ -248,6 +248,13 @@ class VolumeTarget(Rule):
     kind = "hard"
     required_thresholds = ("min_pct", "max_pct")
 
+    def range_km(self, target_km: float) -> tuple[str, str]:
+        """Dozwolony zakres objętości w km, zaokrąglony do wnętrza przedziału."""
+        return (
+            fmt_min_km(target_km * (1 + self.thresholds["min_pct"] / 100)),
+            fmt_max_km(target_km * (1 + self.thresholds["max_pct"] / 100)),
+        )
+
     def check(self, ctx: WeekContext) -> list[Violation]:
         if ctx.target_volume_km <= 0:
             return []
@@ -256,8 +263,7 @@ class VolumeTarget(Rule):
         low, high = self.thresholds["min_pct"], self.thresholds["max_pct"]
         if low <= deviation <= high:
             return []
-        lo_km = fmt_min_km(ctx.target_volume_km * (1 + low / 100))
-        hi_km = fmt_max_km(ctx.target_volume_km * (1 + high / 100))
+        lo_km, hi_km = self.range_km(ctx.target_volume_km)
         # dwa miejsca po przecinku, zaokrąglone od przedziału, by naruszenie nie wyglądało na wartość w przedziale
         round_away = math.floor if deviation < low else math.ceil
         shown = fmt(round_away(round(volume * 100, 6)) / 100, 2)

@@ -80,6 +80,16 @@ class RuleRegistry:
     def has_hard(violations: list[Violation]) -> bool:
         return any(v.kind is RuleKind.HARD for v in violations)
 
+    def rule(self, rule_id: str) -> Rule:
+        return next(r for r in self._rules if r.id == rule_id)
+
+
+def volume_target_range(registry: RuleRegistry, target_km: float) -> tuple[str, str]:
+    """Dozwolony zakres objętości Tygodnia (min, max w km z przecinkiem), ten sam, który sprawdza Reguła T6."""
+    rule = registry.rule(VolumeTarget.id)
+    assert isinstance(rule, VolumeTarget)
+    return rule.range_km(target_km)
+
 
 def load_rules(path: Path) -> RuleRegistry:
     raw = yaml.safe_load(path.read_text(encoding="utf-8"))
