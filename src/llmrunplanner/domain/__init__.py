@@ -11,6 +11,8 @@ from .enums import (
     WorkoutType,
     Zone,
 )
+from .interpretation import Citation, CitationCheck, Interpretation, InterpretationCheck, Statement
+from .llm import CallRecord, ModelSpec, PlanRecord
 from .metrics import (
     ActivityMetrics,
     AthleteMetrics,
@@ -53,6 +55,9 @@ __all__ = [
     "BestEffortSummary",
     "Block",
     "CalendarWeek",
+    "CallRecord",
+    "Citation",
+    "CitationCheck",
     "CriticalSpeed",
     "DailyLoad",
     "Distance",
@@ -66,12 +71,16 @@ __all__ = [
     "HealthQuestion",
     "HeartRateProfile",
     "HistorySummary",
+    "Interpretation",
+    "InterpretationCheck",
     "LoadPoint",
     "LongRun",
+    "ModelSpec",
     "PacedBlock",
     "PacedSegment",
     "PacedWorkout",
     "Phase",
+    "PlanRecord",
     "PredictionSummary",
     "RaceDay",
     "RacePrediction",
@@ -81,6 +90,7 @@ __all__ = [
     "Sex",
     "Skeleton",
     "SkeletonWeek",
+    "Statement",
     "SubSport",
     "Threshold",
     "TrendPoint",
