@@ -1,0 +1,8 @@
+Poprzednia odpowiedź narusza Reguły twarde albo ma błędy formatu. Popraw ją i zwróć w tym samym formacie. Nie zmieniaj elementów, których nie dotyczą Naruszenia.
+
+## Naruszenia i błędy formatu
+{problems}
+
+Poprzednia odpowiedź jest w wiadomości powyżej.
+
+Wszystkie zasady z pierwszego polecenia nadal obowiązują. Przed odpowiedzią sprawdź, czy poprawka usuwa każdy problem z listy i nie tworzy nowych. Zwróć całą poprawioną odpowiedź wyłącznie przez wywołanie tego samego narzędzia, z kompletną odpowiedzią w argumentach. Nie pisz nic poza wywołaniem narzędzia.
